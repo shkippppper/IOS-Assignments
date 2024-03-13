@@ -105,7 +105,9 @@ if randomNumber % 3 == 0 {
 var num1: Double = 5.8
 var num2: Double = -5.8
 
-var statement: String = abs(num1) == abs(num2) ? "თანაბრად დაშორებულია ნულიდან" : "არ არის თანაბრად დაშორებული ნულიდან"
+//var statement: String = abs(num1) == abs(num2) ? "თანაბრად დაშორებულია ნულიდან" : "არ არის თანაბრად დაშორებული ნულიდან"
+
+var statement: String = num1 * num1 == num2 * num2 ? "თანაბრად დაშორებულია ნულიდან" : "არ არის თანაბრად დაშორებული ნულიდან"
 
 print(statement)
 
