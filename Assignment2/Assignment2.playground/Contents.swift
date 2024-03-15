@@ -62,24 +62,19 @@ print(denom % 10 == denom / 10 ? "ორნიშნა რიცხვში �
 
 //8. აიღეთ ცვლადი numberOfMonths მიანიჭეთ მნიშვნელობა და იმის მიხედვით თუ მერამდენე თვეა დაბეჭდეთ ის (გაზაფხული, ზაფხული, შემოდგომა, ზამთარი) შესაბამისად.
 
-var numberOfMonths:UInt8 = 1
+let numberOfMonths: UInt8 = 12
 
-if numberOfMonths == 0 {
-    print("ასეთი თვე არ არსებობს")
-}else if numberOfMonths <= 2 && numberOfMonths > 0{
+if numberOfMonths < 1 || numberOfMonths > 12 {
+    print("ეს თვე არ არსერბობს")
+} else if numberOfMonths <= 2 || numberOfMonths == 12 {
     print("ზამთარი")
-}else if numberOfMonths <= 5{
+} else if numberOfMonths <= 5 {
     print("გაზაფხული")
-}else if numberOfMonths <= 8{
+} else if numberOfMonths <= 8 {
     print("ზაფხული")
-}else if numberOfMonths <= 11{
+} else {
     print("შემოდგომა")
-}else if numberOfMonths <= 12{
-    print("ზამთარი")
-}else{
-    print("ასეთი თვე არ არსებობს")
 }
-
 
 //9. შექმენით მთელი რიცხვის მქონე ცვლადი. თუ ეს ცვლადი იყოფა 3-ზე, დაბეჭდეთ “იყოფა 3-ზე”, თუ ეს ცვლადი იყოფა 4-ზე დაბეჭდეთ “იყოფა 4-ზე”, თუ იყოფა ორივეზე დაბეჭდეთ “იყოფა 3-ზე და 4-ზე”
 
