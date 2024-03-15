@@ -131,9 +131,9 @@ customPrint(exercise: "6", action: sixthTask)
 func numberOfVowels(myString: String) -> Int{
     var count = 0
     
-    let vowels = ["ა","ე","ი","ო","უ"]
+    let consonants = "ბგდვზთკლმნპჟრსტფქღყშჩცძწჭხჯჰ"
     for char in myString {
-        count += vowels.contains(String(char)) ? 1 : 0
+        count += consonants.contains(String(char)) ? 1 : 0
     }
 
     return count
