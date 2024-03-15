@@ -123,7 +123,7 @@ let sixthTask = {
     print(twoNumberDifference(3.123, 2.111))
 }
 
-customPrint(exercise: "5", action: sixthTask)
+customPrint(exercise: "6", action: sixthTask)
 
 
 //7. დაწერეთ ფუნქცია, რომელსაც გადააწვდით String ტიპის პარამეტრს. დაითვალეთ ამ პარამეტრში თანხმოვნების რაოდენობა და დაბეჭდეთ ის.
@@ -142,6 +142,8 @@ func numberOfVowels(myString: String) -> Int{
 let seventhTask = {
     print(numberOfVowels(myString: "აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ"))
 }
+
+customPrint(exercise: "7", action: seventhTask)
 
 
 // OPTIONAL:
