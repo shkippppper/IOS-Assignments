@@ -17,12 +17,14 @@ var oddProduct = 1
 var firstTask = {
     while i <= 20 {
         
-        oddProduct *= i % 2 != 0 ? i : 1
-        
-        print(oddProduct)
-        
+        if i % 2 == 0{
+            oddProduct *= 1
+        }else{
+            oddProduct *= i
+        }
         i += 1
     }
+    print(oddProduct)
 }
 
 customPrint(exercise: "1", action: firstTask)
@@ -76,7 +78,7 @@ let fourthTask = {
     while ticketsRemaining > 0{
         ticketsRemaining -= 1
         
-        if(ticketsRemaining == 0){
+        if ticketsRemaining == 0{
             print("ყველა ბილეთი გაყიდულია გელოდებით კონცერტზე")
         }else{
             print("ბილეთი გაყიდულია, დარჩენილია მხოლოდ \(ticketsRemaining) რაოდენობა")
@@ -115,7 +117,7 @@ customPrint(exercise: "5", action: fifthTask)
 
 //6. დაწერეთ ქლოჟერი რომელიც გამოითვლის ორი რიცხვის სხვაობას და დააბრუნებს მიღებულ მნიშვნელობას
 
-let twoNumberDifference: (Double,Double) -> (Double) = { x,y in
+let twoNumberDifference: (Double,Double) -> Double = { x,y in
     return x - y
 }
 
