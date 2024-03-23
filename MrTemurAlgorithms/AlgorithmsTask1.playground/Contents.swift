@@ -29,7 +29,7 @@ func isSameString(str1: String, str2: String)->(Bool){
     return true
 }
 
-print(isSameString(str1: "abc", str2: "abc"))
+print(isSameString(str1: "abc", str2: "cba"))
 
 
 //2) დაწერეთ ფუნქცია რომელიც მიიღებს და დააბრუნებს სტრინგს სადაც ზედმეტ სფეისებს მოაშორებს.
@@ -38,17 +38,17 @@ print(isSameString(str1: "abc", str2: "abc"))
 //  "A[space][space][space]B[space][space]C" დააბრუნებს "A[space]B[space]C"
 //  "[space][space][space]a" დააბრუნებს "[space]a" ანუ 1 სფეისი ყოველთვის რჩება, ამ შემთხვევაში წინაც.
 
-func removeExtraSpace(string: String)->String{
+func removeExtraSpace(string: String) -> String{
     var result = ""
     var spaceFound = false
     
-    for char in string{
-        if char == " "{
+    for char in string {
+        if char == " " {
             if !spaceFound {
                 result += String(char)
                 spaceFound = true
             }
-        }else{
+        } else {
             result += String(char)
             spaceFound = false
         }
@@ -82,6 +82,7 @@ func sumInString(string: String) -> Int{
         }
         
     }
+    print(numbersList)
     numbersList.append(Int(newNumber) ?? 0)
     
     result = numbersList.reduce(0, +)
@@ -89,4 +90,4 @@ func sumInString(string: String) -> Int{
     return result
 }
 
-print(sumInString(string: "asdf10b20c30"))
+print(sumInString(string: "asdf10b20c30c3"))

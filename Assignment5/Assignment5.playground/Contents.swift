@@ -138,15 +138,19 @@ print(returnAllAlbumsBeforeYear(albums: myArray, yearToCheck: 2008))
 
 
 //5.შექმენით String-ის ტიპის lazy property wrapper სახელად, cachedData. ინიციალიზება გაუკეთეთ ქლოჟერით რომელიც აბრუნებს სტრინგს მნიშვნელობით “lazy ინიციალიზებულია”. მიწვდით ამ ფროფერთის და დაბეჭდეთ მისი მნიშვნელობა
+@propertyWrapper
 struct lazyPropertyWrapper {
-    lazy var cachedData: String = {
-        return "lazy initialized"
-    }()
+    var wrappedValue: String{
+        lazy var cachedData: String = {
+            return "lazy initialized"
+        }()
+        return cachedData
+    }
 }
 
 let getClosure: () -> Void = {
     var instance = lazyPropertyWrapper()
-    print(instance.cachedData)
+    print(instance.wrappedValue)
 }
     
 getClosure()
