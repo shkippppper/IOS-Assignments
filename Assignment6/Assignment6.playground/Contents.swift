@@ -310,13 +310,17 @@ class sayingsGenerator {
     
     func addSaying(newSaying: String){
         sayings.append(newSaying)
+        print("დაემატა ახალი გამონათქვამი - \(newSaying)")
     }
 }
 
 var sayingClass = sayingsGenerator()
+
 killerSayings.forEach({saying in
     sayingClass.addSaying(newSaying: saying)
 })
+
+sayingClass.addSaying(newSaying: "რაქენი გუდუნა ეს")
 
 print(sayingClass.getRandomSaying())
 
