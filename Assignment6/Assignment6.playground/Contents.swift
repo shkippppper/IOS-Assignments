@@ -295,72 +295,29 @@ var killerSayings = [
     "ბებიააა... ბებია... ოლია მათხოვარი მევიდა...",
     "მზე აღარ ამოდის ჩაგვიჭრეს"
 ]
-//
-//class sayingsGenerator {
-//    var sayings = [String]()
-//    
-//    init(sayings: [String] = [String]()) {
-//        self.sayings = sayings
-//    }
-//    
-//    func getRandomSaying() -> String{
-//        return sayings.randomElement() ?? "ERROR - მონაცემთა ბაზა ცარიელია"
-//    }
-//    
-//    func addSaying(newSaying: String, add: Bool){
-//        if add{
-//            sayings.append(newSaying)
-//        }else{
-//            
-//        }
-//        print("დაემატა ახალი გამონათქვამი - \(newSaying)")
-//    }
-//}
-//
-//var sayingClass = sayingsGenerator()
-//
-//killerSayings.forEach({saying in
-//    sayingClass.addSaying(newSaying: saying, add: true)
-//    sayingClass.addSaying(newSaying: saying, add: false)
-//})
-//
-//sayingClass.addSaying(newSaying: "რაქენი გუდუნა ეს")
-//
-//print(sayingClass.getRandomSaying())
-//
 
-class QuoteGenerator {
-    var quotesWithMeanings: [String: String]
+class sayingsGenerator {
+    var sayings = [String]()
     
-    init(quotes: [String], meanings: [String]) {
-        var quotesWithMeanings = [String: String] ()
-        for (index, quote) in quotes.enumerated() {
-            quotesWithMeanings[quote] = meanings[index]
-        }
-        self.quotesWithMeanings = quotesWithMeanings
+    init(sayings: [String] = [String]()) {
+        self.sayings = sayings
     }
     
-    func selectQuote() {
-        if quotesWithMeanings.isEmpty {
-            print("ver moidzebna")
-        } else {
-            let randomIndex = Int.random(in: 0..<quotesWithMeanings.count)
-            let selectedQuote = Array(quotesWithMeanings.keys)[randomIndex]
-            let selectedMeaning = quotesWithMeanings[selectedQuote] ?? ""
-            print("'\(selectedQuote)' meaning: \(selectedMeaning)))")
-        }
+    func getRandomSaying() -> String{
+        return sayings.randomElement() ?? "ERROR - მონაცემთა ბაზა ცარიელია"
     }
-    func addQuote(quote:String, meaning:String) {
-        quotesWithMeanings[quote] = meaning
-    }
-    func removeQuote(quote: String) {
-        quotesWithMeanings.removeValue(forKey: quote)
+    
+    func addSaying(newSaying: String){
+        sayings.append(newSaying)
     }
 }
- 
-let quotesArray = ["დავინახე თუ არა მივხვდი, რომ – ” დევიღუპე","ისეთი აფერისტია, რომ ბანკომატებიც კი აძლევენ ფულს ვალად", "სულის ტკივილამდე ვტკივილობ","იმედის შუქი ჩამიქრა ვინმემ ასანთი მათხოვეთ", "არავინაა უნიკალური…მე არავინ ვარ…ე.ი უნიკალური ვარ", "ფულის წვიმა რომ მოდიოდეს ნისიების რვეული დამეცემა თავზე", "თქვენ მოჰკალით ძერა?", "ბებიააა... ბებია... ოლია მათხოვარი მევიდა...", "მზე აღარ ამოდის ჩაგვიჭრეს"]
-let meaningsArray = ["შემიყვარდა", "მეგრელია", "მართლა შევღონდი", "იმედი ბოლოს კვდებაო, ჩათვალე ბოლოა", "იდეალური ჩემი თავი მეზარება", "იღბლიანი ბორბალი", "შიგ გულში მოახვედრა😉","ტფუი ეშმაკს", "🌚"]
-let quotesGenerator = QuoteGenerator(quotes: quotesArray, meanings: meaningsArray)
-quotesGenerator.selectQuote()
-quotesGenerator.addQuote(quote: "გაიხარე გენაცვალე მეჩქარეცფკიდჯსბნციჯდ", meaning: "მომწყდი თავიდან")
-quotesGenerator.removeQuote(quote: "გაიხარე გენაცვალე მეჩქარეცფკიდჯსბნციჯდ")
+
+var sayingClass = sayingsGenerator()
+
+killerSayings.forEach({saying in
+    sayingClass.addSaying(newSaying: saying)
+})
+
+sayingClass.addSaying(newSaying: "რაქენი გუდუნა ეს")
+
+print(sayingClass.getRandomSaying())
