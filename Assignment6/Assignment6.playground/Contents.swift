@@ -7,15 +7,14 @@ import Foundation
 //Method რომელიც ნიშნავს წიგნს როგორც borrowed-ს.
 //Method რომელიც ნიშნავს წიგნს როგორც დაბრუნებულს.
 
-
-class Book{
+class Book {
     
     var bookID: Int
     var title: String
     var author: String
     var isBorrowed: Bool
     
-    init(bookID: Int, title: String, author: String, isBorrowed: Bool){
+    init(bookID: Int, title: String, author: String, isBorrowed: Bool) {
         self.bookID = bookID
         self.title = title
         self.author = author
@@ -25,6 +24,7 @@ class Book{
     func hasBeenBorrowed(){
         self.isBorrowed = true
     }
+    
     func hasBeenReturned(){
         self.isBorrowed = false
     }
@@ -55,11 +55,11 @@ class Owner{
             return
         }
         book.hasBeenBorrowed()
-        self.borrowedBooks.append(book)
+        borrowedBooks.append(book)
     }
     
     func returnBook(book: Book){
-        for (index, borrowedBook) in borrowedBooks.enumerated() {
+        for (index, borrowedBook) in borrowedBooks.enumerated() { 
             if borrowedBook.bookID == book.bookID {
                 book.hasBeenReturned()
                 borrowedBooks.remove(at: index)
@@ -67,6 +67,7 @@ class Owner{
             }
         }
         
+
         print("ეს წიგნი უკვე დაბრუნებულია, ან არ არსებობს\n")
         
     }
@@ -85,7 +86,8 @@ class Owner{
 //Method რომელიც ეძებს წაღებულ წიგნებს კონკრეტული Owner-ის მიერ.
 //Method რომელიც აძლევს უფლებას Owner-ს წააღებინოს წიგნი თუ ის თავისუფალია.
 
-class Library{
+
+class Library {
     var booksArray: [Book]
     var ownersArray: [Owner]
     
@@ -104,16 +106,12 @@ class Library{
         print("ბიბლიოთეკაში დაემატა ახალი მომხმარებელი - \(owner.name). (ID - \(owner.ownerId))")
     }
     
-    func getAllAvailableBooks() -> [Book]{
-        return booksArray.filter {book in
-            !book.isBorrowed
-        }
+    func getAllAvailableBooks() -> [Book] {
+        booksArray.filter { !$0.isBorrowed }
     }
     
-    func getAllBorroweBooks() -> [Book]{
-        return booksArray.filter {book in
-            book.isBorrowed
-        }
+    func getAllBorroweBooks() -> [Book] {
+        booksArray.filter { $0.isBorrowed }
     }
     
     func getOwnerWithId(ownerId: Int) -> Owner?{
@@ -149,7 +147,6 @@ class Library{
         } else {
             print("წიგნი შესაბამისი ID-თ (\(bookId)) არ არსებობს, ან წაღებულია\n")
         }
-        
     }
     
     func returnBookBackToLibrary(ownerId: Int, bookId: Int){
@@ -165,7 +162,7 @@ class Library{
         let bookToReturn = owner.borrowedBooks[bookIndex]
         owner.returnBook(book: bookToReturn)
         print("მომხმარებელმა - \(owner.name) (ID - \(owner.ownerId)) დააბრუნა - \(bookToReturn.title) (ID - \(bookToReturn.bookID))\n")
-          
+
     }
     
     func printAllAvailableBooks(){
@@ -261,6 +258,8 @@ library.printAllAvailableBooks()
 library.printAllBorrowedBooks()
 library.printOwnersBorrowedBooks(ownerId: 101)
 
+library.getOwnerWithId(ownerId: 1)
+
 // ბევრი ფუნქციონალის დამატება შეიძლებოდა მაგალითად დუპლიკატების detection, როგორც წიგნებზე ისე იუზერებზე, ძირითადად ალბათ exception-ები აკლია ბევრგან, მარა დრო არალი :დ
 
 // optional
@@ -296,31 +295,72 @@ var killerSayings = [
     "ბებიააა... ბებია... ოლია მათხოვარი მევიდა...",
     "მზე აღარ ამოდის ჩაგვიჭრეს"
 ]
+//
+//class sayingsGenerator {
+//    var sayings = [String]()
+//    
+//    init(sayings: [String] = [String]()) {
+//        self.sayings = sayings
+//    }
+//    
+//    func getRandomSaying() -> String{
+//        return sayings.randomElement() ?? "ERROR - მონაცემთა ბაზა ცარიელია"
+//    }
+//    
+//    func addSaying(newSaying: String, add: Bool){
+//        if add{
+//            sayings.append(newSaying)
+//        }else{
+//            
+//        }
+//        print("დაემატა ახალი გამონათქვამი - \(newSaying)")
+//    }
+//}
+//
+//var sayingClass = sayingsGenerator()
+//
+//killerSayings.forEach({saying in
+//    sayingClass.addSaying(newSaying: saying, add: true)
+//    sayingClass.addSaying(newSaying: saying, add: false)
+//})
+//
+//sayingClass.addSaying(newSaying: "რაქენი გუდუნა ეს")
+//
+//print(sayingClass.getRandomSaying())
+//
 
-class sayingsGenerator {
-    var sayings = [String]()
+class QuoteGenerator {
+    var quotesWithMeanings: [String: String]
     
-    init(sayings: [String] = [String]()) {
-        self.sayings = sayings
+    init(quotes: [String], meanings: [String]) {
+        var quotesWithMeanings = [String: String] ()
+        for (index, quote) in quotes.enumerated() {
+            quotesWithMeanings[quote] = meanings[index]
+        }
+        self.quotesWithMeanings = quotesWithMeanings
     }
     
-    func getRandomSaying() -> String{
-        return sayings.randomElement() ?? "ERROR - მონაცემთა ბაზა ცარიელია"
+    func selectQuote() {
+        if quotesWithMeanings.isEmpty {
+            print("ver moidzebna")
+        } else {
+            let randomIndex = Int.random(in: 0..<quotesWithMeanings.count)
+            let selectedQuote = Array(quotesWithMeanings.keys)[randomIndex]
+            let selectedMeaning = quotesWithMeanings[selectedQuote] ?? ""
+            print("'\(selectedQuote)' meaning: \(selectedMeaning)))")
+        }
     }
-    
-    func addSaying(newSaying: String){
-        sayings.append(newSaying)
-        print("დაემატა ახალი გამონათქვამი - \(newSaying)")
+    func addQuote(quote:String, meaning:String) {
+        quotesWithMeanings[quote] = meaning
+    }
+    func removeQuote(quote: String) {
+        quotesWithMeanings.removeValue(forKey: quote)
     }
 }
-
-var sayingClass = sayingsGenerator()
-
-killerSayings.forEach({saying in
-    sayingClass.addSaying(newSaying: saying)
-})
-
-sayingClass.addSaying(newSaying: "რაქენი გუდუნა ეს")
-
-print(sayingClass.getRandomSaying())
-
+ 
+let quotesArray = ["დავინახე თუ არა მივხვდი, რომ – ” დევიღუპე","ისეთი აფერისტია, რომ ბანკომატებიც კი აძლევენ ფულს ვალად", "სულის ტკივილამდე ვტკივილობ","იმედის შუქი ჩამიქრა ვინმემ ასანთი მათხოვეთ", "არავინაა უნიკალური…მე არავინ ვარ…ე.ი უნიკალური ვარ", "ფულის წვიმა რომ მოდიოდეს ნისიების რვეული დამეცემა თავზე", "თქვენ მოჰკალით ძერა?", "ბებიააა... ბებია... ოლია მათხოვარი მევიდა...", "მზე აღარ ამოდის ჩაგვიჭრეს"]
+let meaningsArray = ["შემიყვარდა", "მეგრელია", "მართლა შევღონდი", "იმედი ბოლოს კვდებაო, ჩათვალე ბოლოა", "იდეალური ჩემი თავი მეზარება", "იღბლიანი ბორბალი", "შიგ გულში მოახვედრა😉","ტფუი ეშმაკს", "🌚"]
+let quotesGenerator = QuoteGenerator(quotes: quotesArray, meanings: meaningsArray)
+quotesGenerator.selectQuote()
+quotesGenerator.addQuote(quote: "გაიხარე გენაცვალე მეჩქარეცფკიდჯსბნციჯდ", meaning: "მომწყდი თავიდან")
+quotesGenerator.removeQuote(quote: "გაიხარე გენაცვალე მეჩქარეცფკიდჯსბნციჯდ")
