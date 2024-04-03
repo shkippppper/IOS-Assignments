@@ -19,9 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var switchController: UISwitch!
-    @IBAction func firstNumber(_ sender: Any) {
-        print(123)
-    }
+
     
     @IBAction func switchMode(_ sender: UISwitch) {
         isGCD = !isGCD
