@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         } else {
             sender.layer.borderWidth = 1
             sender.layer.borderColor = UIColor.red.cgColor
+            sender.layer.cornerRadius = 5
             buttonOutlet.isEnabled = false
             buttonOutlet.alpha = 0.5
         }
@@ -59,6 +60,7 @@ class ViewController: UIViewController {
         } else {
             sender.layer.borderWidth = 1
             sender.layer.borderColor = UIColor.red.cgColor
+            sender.layer.cornerRadius = 5
             buttonOutlet.isEnabled = false
             buttonOutlet.alpha = 0.5
         }
