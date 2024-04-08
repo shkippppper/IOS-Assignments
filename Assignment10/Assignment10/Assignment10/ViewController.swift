@@ -88,11 +88,12 @@ class ViewController: UIViewController {
         buyButtonOutlet.clipsToBounds = true
         
         footerOutlet.layer.cornerRadius = 20
+        
         footerOutlet.layer.shadowColor = UIColor.black.cgColor
         footerOutlet.layer.shadowOpacity = 0.3
         footerOutlet.layer.shadowOffset = .zero
         footerOutlet.layer.shadowRadius = 20
-        footerOutlet.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+//        footerOutlet.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         smallBtnOutlet.layer.cornerRadius = 15
         smallBtnOutlet.layer.borderWidth = 1
