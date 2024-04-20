@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="imediLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IBq-dL-b7T">
+                                <rect key="frame" x="129" y="346.66666666666669" width="135" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="BK8-IL-2gz"/>
+                                    <constraint firstAttribute="height" constant="159" id="sgB-xh-0ud"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ვ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gr-Gl-hQO">
+                                <rect key="frame" x="130" y="463.66666666666669" width="17" height="36.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36.670000000000002" id="9ee-cC-q1E"/>
+                                    <constraint firstAttribute="width" constant="17" id="9lG-pS-khy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
+                                <color key="textColor" red="0.1843137443" green="0.19215688110000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="სხ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prl-Le-tJy">
+                                <rect key="frame" x="97" y="461" width="33.333333333333343" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Wyf-DI-98x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="28"/>
+                                <color key="textColor" red="0.1843137443" green="0.19215688110000001" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Gr-Gl-hQO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-58" id="2I4-I1-eUZ"/>
+                            <constraint firstItem="prl-Le-tJy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-83" id="7cI-oo-89V"/>
+                            <constraint firstItem="9Gr-Gl-hQO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="56" id="PDB-iA-Z0C"/>
+                            <constraint firstItem="prl-Le-tJy" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="63" id="WlM-MX-dhP"/>
+                            <constraint firstItem="IBq-dL-b7T" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="c9v-gg-uXU"/>
+                            <constraint firstItem="IBq-dL-b7T" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="knf-lX-swq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="imediLogo" width="277" height="300"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
