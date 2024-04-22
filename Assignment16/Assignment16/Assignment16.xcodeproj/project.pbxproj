@@ -21,7 +21,7 @@
 		BA5A85652BD6BD0100546D2E /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A85642BD6BD0100546D2E /* BasicInfoView.swift */; };
 		BA5A85672BD6BD1100546D2E /* UsefulLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A85662BD6BD1100546D2E /* UsefulLinksView.swift */; };
 		BA5A856A2BD6BF1E00546D2E /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A85692BD6BF1E00546D2E /* UILabelExtension.swift */; };
-		BA5A856C2BD6CE2600546D2E /* BasicInfoPairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A856B2BD6CE2600546D2E /* BasicInfoPairView.swift */; };
+		BA5A85732BD71A2400546D2E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A85722BD71A2400546D2E /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		BA5A85642BD6BD0100546D2E /* BasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoView.swift; sourceTree = "<group>"; };
 		BA5A85662BD6BD1100546D2E /* UsefulLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulLinksView.swift; sourceTree = "<group>"; };
 		BA5A85692BD6BF1E00546D2E /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		BA5A856B2BD6CE2600546D2E /* BasicInfoPairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoPairView.swift; sourceTree = "<group>"; };
+		BA5A85722BD71A2400546D2E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				BA5A856F2BD6F03200546D2E /* Views */,
-				BA5A856D2BD6DF0700546D2E /* Extras */,
 				BA5A85592BD69D4400546D2E /* Models */,
 				BA5A854F2BD5670200546D2E /* App */,
 				BA5A85552BD56C9200546D2E /* Cells */,
@@ -144,6 +143,7 @@
 				BA5A85572BD56D1D00546D2E /* LandingPageVC+TableViewExtension.swift */,
 				BA5A855C2BD6B47E00546D2E /* UIImageViewExtension.swift */,
 				BA5A85692BD6BF1E00546D2E /* UILabelExtension.swift */,
+				BA5A85722BD71A2400546D2E /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,14 +154,6 @@
 				BA5A855A2BD69D5200546D2E /* CountryModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		BA5A856D2BD6DF0700546D2E /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-				BA5A856B2BD6CE2600546D2E /* BasicInfoPairView.swift */,
-			);
-			path = Extras;
 			sourceTree = "<group>";
 		};
 		BA5A856F2BD6F03200546D2E /* Views */ = {
@@ -248,12 +240,12 @@
 				BA5A855D2BD6B47E00546D2E /* UIImageViewExtension.swift in Sources */,
 				BA5A85582BD56D1D00546D2E /* LandingPageVC+TableViewExtension.swift in Sources */,
 				BA5A855F2BD6BB0300546D2E /* DetailedCountryVC.swift in Sources */,
-				BA5A856C2BD6CE2600546D2E /* BasicInfoPairView.swift in Sources */,
 				BA5A85652BD6BD0100546D2E /* BasicInfoView.swift in Sources */,
 				BA5A853B2BD55ED400546D2E /* AppDelegate.swift in Sources */,
 				BA5A853D2BD55ED400546D2E /* SceneDelegate.swift in Sources */,
 				BA5A85632BD6BCF600546D2E /* FlagView.swift in Sources */,
 				BA5A85672BD6BD1100546D2E /* UsefulLinksView.swift in Sources */,
+				BA5A85732BD71A2400546D2E /* UIViewExtension.swift in Sources */,
 				BA5A855B2BD69D5200546D2E /* CountryModel.swift in Sources */,
 				BA5A85542BD56A4100546D2E /* CountryCell.swift in Sources */,
 				BA5A856A2BD6BF1E00546D2E /* UILabelExtension.swift in Sources */,

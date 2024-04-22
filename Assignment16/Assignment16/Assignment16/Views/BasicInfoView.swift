@@ -11,16 +11,6 @@ class BasicInfoView: UIView {
     
     let titleLabel = UILabel.createTitleLabel(text: "Basic information:")
     
-    let populationLabel = UILabel()
-    let independentLabel = UILabel()
-    let regionLabel = UILabel()
-    let subregionLabel = UILabel()
-    let nameLabel = UILabel()
-    let officialNameLabel = UILabel()
-    let startOfWeekLabel = UILabel()
-    let flagLabel = UILabel()
-    let unMemberLabel = UILabel()
-    
     let infoStackView = UIStackView()
     
     override init(frame: CGRect) {
@@ -34,25 +24,10 @@ class BasicInfoView: UIView {
     }
     
     func setupViews() {
-        populationLabel.font = UIFont.systemFont(ofSize: 16)
-        independentLabel.font = UIFont.systemFont(ofSize: 16)
-        regionLabel.font = UIFont.systemFont(ofSize: 16)
-        subregionLabel.font = UIFont.systemFont(ofSize: 16)
-        
         infoStackView.axis = .vertical
         infoStackView.spacing = 15
         infoStackView.distribution = .equalSpacing
         infoStackView.alignment = .fill
-        
-        infoStackView.addArrangedSubview(populationLabel)
-        infoStackView.addArrangedSubview(independentLabel)
-        infoStackView.addArrangedSubview(regionLabel)
-        infoStackView.addArrangedSubview(subregionLabel)
-        infoStackView.addArrangedSubview(nameLabel)
-        infoStackView.addArrangedSubview(officialNameLabel)
-        infoStackView.addArrangedSubview(startOfWeekLabel)
-        infoStackView.addArrangedSubview(flagLabel)
-        infoStackView.addArrangedSubview(unMemberLabel)
     }
     
     func setupLayout() {
@@ -85,14 +60,14 @@ class BasicInfoView: UIView {
         flag: String,
         unMember: String
     ) {
-        populationLabel.text = "Population: \(population)"
-        independentLabel.text = "Independent: \(independent)"
-        regionLabel.text = "Region: \(region)"
-        subregionLabel.text = "Subregion: \(subregion)"
-        nameLabel.text = "Name: \(name)"
-        officialNameLabel.text = "Official Name: \(officialName)"
-        startOfWeekLabel.text = "Subregion: \(startOfWeek)"
-        flagLabel.text = "Subregion: \(flag)"
-        unMemberLabel.text = "Subregion: \(unMember)"
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Population", rightTitle: population))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Independent", rightTitle: independent))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Region", rightTitle: region))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Subregion", rightTitle: subregion))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Name", rightTitle: name))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Official Name", rightTitle: officialName))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Start of Week", rightTitle: startOfWeek))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "Flag", rightTitle: flag))
+        infoStackView.addArrangedSubview(UIView.createCustomLabelView(leftTitle: "UN Member", rightTitle: unMember))
     }
 }
