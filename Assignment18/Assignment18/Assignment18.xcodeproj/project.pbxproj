@@ -24,10 +24,14 @@
 		BA851C812BDAA856002FA497 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA851C802BDAA856002FA497 /* NetworkManager.swift */; };
 		BA851C872BDB2178002FA497 /* DetailedCountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA851C862BDB2178002FA497 /* DetailedCountryViewModel.swift */; };
 		BA851C892BDB2184002FA497 /* LandingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA851C882BDB2184002FA497 /* LandingPageViewModel.swift */; };
+		BA851C8C2BDB9442002FA497 /* LoginPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA851C8B2BDB9442002FA497 /* LoginPageVC.swift */; };
+		BA851C8E2BDB9452002FA497 /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA851C8D2BDB9452002FA497 /* LoginPageViewModel.swift */; };
+		BAE9DC922BDBD42000BF861D /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9DC912BDBD42000BF861D /* KeyChainService.swift */; };
+		BAE9DC942BDBD5FD00BF861D /* ExtraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9DC932BDBD5FD00BF861D /* ExtraData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA5A85372BD55ED400546D2E /* Assignment17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment17.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA5A85372BD55ED400546D2E /* Assignment18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment18.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5A853A2BD55ED400546D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5A853C2BD55ED400546D2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BA5A853E2BD55ED400546D2E /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
@@ -46,6 +50,10 @@
 		BA851C802BDAA856002FA497 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA851C862BDB2178002FA497 /* DetailedCountryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCountryViewModel.swift; sourceTree = "<group>"; };
 		BA851C882BDB2184002FA497 /* LandingPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewModel.swift; sourceTree = "<group>"; };
+		BA851C8B2BDB9442002FA497 /* LoginPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageVC.swift; sourceTree = "<group>"; };
+		BA851C8D2BDB9452002FA497 /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
+		BAE9DC912BDBD42000BF861D /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		BAE9DC932BDBD5FD00BF861D /* ExtraData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,7 @@
 		BA5A852E2BD55ED400546D2E = {
 			isa = PBXGroup;
 			children = (
-				BA5A85392BD55ED400546D2E /* Assignment17 */,
+				BA5A85392BD55ED400546D2E /* Assignment18 */,
 				BA5A85382BD55ED400546D2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,23 +78,24 @@
 		BA5A85382BD55ED400546D2E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA5A85372BD55ED400546D2E /* Assignment17.app */,
+				BA5A85372BD55ED400546D2E /* Assignment18.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA5A85392BD55ED400546D2E /* Assignment17 */ = {
+		BA5A85392BD55ED400546D2E /* Assignment18 */ = {
 			isa = PBXGroup;
 			children = (
 				BA851C7F2BDAA846002FA497 /* API */,
 				BA5A854F2BD5670200546D2E /* App */,
 				BA5A85562BD56C9A00546D2E /* Extensions */,
+				BAE9DC8C2BDBC43300BF861D /* Extras */,
 				BA5A85592BD69D4400546D2E /* Models */,
 				BA5A85502BD5679700546D2E /* Resources */,
 				BA5A854E2BD566D800546D2E /* Scenes */,
 				BA851C572BDA61F7002FA497 /* ViewModels */,
 			);
-			path = Assignment17;
+			path = Assignment18;
 			sourceTree = "<group>";
 		};
 		BA5A854E2BD566D800546D2E /* Scenes */ = {
@@ -119,6 +128,7 @@
 		BA5A85512BD5683200546D2E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BA851C8A2BDB942C002FA497 /* LoginPage */,
 				BA851C822BDACA48002FA497 /* LandingPage */,
 				BA851C832BDACA54002FA497 /* DetailedPage */,
 			);
@@ -174,6 +184,7 @@
 			children = (
 				BA851C882BDB2184002FA497 /* LandingPageViewModel.swift */,
 				BA851C862BDB2178002FA497 /* DetailedCountryViewModel.swift */,
+				BA851C8D2BDB9452002FA497 /* LoginPageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -204,12 +215,29 @@
 			path = DetailedPage;
 			sourceTree = "<group>";
 		};
+		BA851C8A2BDB942C002FA497 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				BA851C8B2BDB9442002FA497 /* LoginPageVC.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		BAE9DC8C2BDBC43300BF861D /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				BAE9DC912BDBD42000BF861D /* KeyChainService.swift */,
+				BAE9DC932BDBD5FD00BF861D /* ExtraData.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA5A85362BD55ED400546D2E /* Assignment17 */ = {
+		BA5A85362BD55ED400546D2E /* Assignment18 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA5A854B2BD55ED600546D2E /* Build configuration list for PBXNativeTarget "Assignment17" */;
+			buildConfigurationList = BA5A854B2BD55ED600546D2E /* Build configuration list for PBXNativeTarget "Assignment18" */;
 			buildPhases = (
 				BA5A85332BD55ED400546D2E /* Sources */,
 				BA5A85342BD55ED400546D2E /* Frameworks */,
@@ -219,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = Assignment17;
+			name = Assignment18;
 			productName = Assignment16;
-			productReference = BA5A85372BD55ED400546D2E /* Assignment17.app */;
+			productReference = BA5A85372BD55ED400546D2E /* Assignment18.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -239,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BA5A85322BD55ED400546D2E /* Build configuration list for PBXProject "Assignment17" */;
+			buildConfigurationList = BA5A85322BD55ED400546D2E /* Build configuration list for PBXProject "Assignment18" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,7 +280,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA5A85362BD55ED400546D2E /* Assignment17 */,
+				BA5A85362BD55ED400546D2E /* Assignment18 */,
 			);
 		};
 /* End PBXProject section */
@@ -280,12 +308,16 @@
 				BA851C812BDAA856002FA497 /* NetworkManager.swift in Sources */,
 				BA851C892BDB2184002FA497 /* LandingPageViewModel.swift in Sources */,
 				BA851C872BDB2178002FA497 /* DetailedCountryViewModel.swift in Sources */,
+				BAE9DC922BDBD42000BF861D /* KeyChainService.swift in Sources */,
+				BA851C8E2BDB9452002FA497 /* LoginPageViewModel.swift in Sources */,
 				BA5A85652BD6BD0100546D2E /* BasicInfoView.swift in Sources */,
 				BA5A853B2BD55ED400546D2E /* AppDelegate.swift in Sources */,
 				BA5A853D2BD55ED400546D2E /* SceneDelegate.swift in Sources */,
 				BA5A85632BD6BCF600546D2E /* FlagView.swift in Sources */,
 				BA5A85672BD6BD1100546D2E /* UsefulLinksView.swift in Sources */,
+				BA851C8C2BDB9442002FA497 /* LoginPageVC.swift in Sources */,
 				BA5A85732BD71A2400546D2E /* UIViewExtension.swift in Sources */,
+				BAE9DC942BDBD5FD00BF861D /* ExtraData.swift in Sources */,
 				BA5A855B2BD69D5200546D2E /* CountryModel.swift in Sources */,
 				BA5A85542BD56A4100546D2E /* CountryCell.swift in Sources */,
 				BA5A856A2BD6BF1E00546D2E /* UILabelExtension.swift in Sources */,
@@ -434,7 +466,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XB2U2FV34B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Assignment17/Resources/Info.plist;
+				INFOPLIST_FILE = Assignment18/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -444,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = atitb.Assignment17;
+				PRODUCT_BUNDLE_IDENTIFIER = atitb.Assignment18;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -461,7 +493,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XB2U2FV34B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Assignment17/Resources/Info.plist;
+				INFOPLIST_FILE = Assignment18/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -471,7 +503,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = atitb.Assignment17;
+				PRODUCT_BUNDLE_IDENTIFIER = atitb.Assignment18;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -482,7 +514,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA5A85322BD55ED400546D2E /* Build configuration list for PBXProject "Assignment17" */ = {
+		BA5A85322BD55ED400546D2E /* Build configuration list for PBXProject "Assignment18" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA5A85492BD55ED600546D2E /* Debug */,
@@ -491,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA5A854B2BD55ED600546D2E /* Build configuration list for PBXNativeTarget "Assignment17" */ = {
+		BA5A854B2BD55ED600546D2E /* Build configuration list for PBXNativeTarget "Assignment18" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA5A854C2BD55ED600546D2E /* Debug */,
