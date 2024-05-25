@@ -154,7 +154,6 @@
 		BA5A85562BD56C9A00546D2E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BA5A85572BD56D1D00546D2E /* LandingPageVC+TableViewExtension.swift */,
 				BA5A85692BD6BF1E00546D2E /* UILabelExtension.swift */,
 				BA5A85722BD71A2400546D2E /* UIViewExtension.swift */,
 			);
@@ -200,6 +199,7 @@
 		BA851C822BDACA48002FA497 /* LandingPage */ = {
 			isa = PBXGroup;
 			children = (
+				BAE9DCC22BDED78700BF861D /* Extensions */,
 				BA5A85552BD56C9200546D2E /* Cells */,
 				BA5A853E2BD55ED400546D2E /* LandingPageVC.swift */,
 			);
@@ -230,6 +230,14 @@
 				BAE9DC932BDBD5FD00BF861D /* ExtraData.swift */,
 			);
 			path = Extras;
+			sourceTree = "<group>";
+		};
+		BAE9DCC22BDED78700BF861D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA5A85572BD56D1D00546D2E /* LandingPageVC+TableViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         footerOutlet.layer.shadowOpacity = 0.3
         footerOutlet.layer.shadowOffset = .zero
         footerOutlet.layer.shadowRadius = 20
-//        footerOutlet.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        footerOutlet.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         smallBtnOutlet.layer.cornerRadius = 15
         smallBtnOutlet.layer.borderWidth = 1

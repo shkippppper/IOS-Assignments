@@ -44,4 +44,8 @@ class DetailedCountryViewModel {
     func didClickGoogleMap(){
         self.openLink(link: self.country.maps.googleMaps ?? "")
     }
+    
+    func countryName() -> String? {
+        self.country.name.common ?? ""
+    }
 }
