@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ProgressBarView: View {
     
+    // MARK: Variables
+    
     var height: CGFloat
     var percent: CGFloat
     var backgroundColor: Color
     var foregroundColor: Color
+    
+    // MARK: Views
     
     var body: some View {
         

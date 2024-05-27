@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct CustomHeaderTextView: View {
+    
+    // MARK: Variables
+    
     var title: String
+    
+    // MARK: View
+    
     var body: some View {
         Text(title)
             .font(.system(size: 22))
