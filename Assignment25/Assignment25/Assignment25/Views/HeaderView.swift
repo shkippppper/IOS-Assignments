@@ -89,12 +89,12 @@ struct HeaderView: View {
                               prompt: Text("Enter new task name").foregroundColor(.gray)
                     ).foregroundStyle(.customColorBackground)
                     
-                        Picker("Pick TAG", selection: $newTaskTag) { // ams label rato ar chans?
-                            Text("Plan").tag(Tag.plan)
-                            Text("Backend").tag(Tag.backend)
-                            Text("Front End").tag(Tag.frontend)
-                            Text("Design").tag(Tag.design)
-                        }
+                    Picker("Pick TAG", selection: $newTaskTag) { // ams label rato ar chans?
+                        Text("Plan").tag(Tag.plan)
+                        Text("Backend").tag(Tag.backend)
+                        Text("Front End").tag(Tag.frontend)
+                        Text("Design").tag(Tag.design)
+                    }
 
                     
                     DatePicker(selection: $newTaskDate, in: Date()..., displayedComponents: .date) {
