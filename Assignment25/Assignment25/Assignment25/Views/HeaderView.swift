@@ -84,17 +84,23 @@ struct HeaderView: View {
             
             if showAddTask {
                 VStack(alignment: .leading, spacing: 10) {
-                    TextField("", 
+
+                    TextField("",
                               text: $newTaskName,
                               prompt: Text("Enter new task name").foregroundColor(.gray)
                     ).foregroundStyle(.customColorBackground)
                     
-                    Picker("Pick TAG", selection: $newTaskTag) { // ams label rato ar chans?
-                        Text("Plan").tag(Tag.plan)
-                        Text("Backend").tag(Tag.backend)
-                        Text("Front End").tag(Tag.frontend)
-                        Text("Design").tag(Tag.design)
-                    }
+                    Form {
+
+                        Picker("Pick TAG", selection: $newTaskTag) { // ams label rato ar chans?
+                            Text("Plan").tag(Tag.plan)
+                            Text("Backend").tag(Tag.backend)
+                            Text("Front End").tag(Tag.frontend)
+                            Text("Design").tag(Tag.design)
+                        }
+                    }.padding(0)
+                        .frame(height: 200)
+
 
                     
                     DatePicker(selection: $newTaskDate, in: Date()..., displayedComponents: .date) {
@@ -133,3 +139,4 @@ struct HeaderView: View {
 #Preview {
     ContentView()
 }
+

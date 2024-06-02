@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $navPath) {
             ZStack {
-                Color.customBackground
+                Color.red.background()
                 VStack(spacing: 0) {
                     List {
                         if let cities = viewModel.getTravelData()?.cities {

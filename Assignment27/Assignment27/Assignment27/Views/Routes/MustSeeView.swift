@@ -33,6 +33,11 @@ struct MustSeeView: View {
             .navigationBarTitleDisplayMode(.inline)
             DefaultButton(buttonTitle: "Go to main menu") {
                 path.removeAll()
+                print(path.count)
+                path.forEach({pa in
+                    print(pa)
+                })
+                print(path)
             }
             .padding(16)
             .background(.customGray)
