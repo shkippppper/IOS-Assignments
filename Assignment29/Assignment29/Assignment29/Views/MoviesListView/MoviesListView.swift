@@ -6,40 +6,72 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MoviesListView: View {
     @StateObject var viewModel: MoviesListViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @EnvironmentObject var contentViewModel: ContentViewModel
+    @Environment(\.modelContext) private var context
+    @Query private var favouriteItems: [MovieDetailedSwiftData]
+    
+    let compactColumns = [
+        GridItem(.flexible(), spacing: 13),
+        GridItem(.flexible(), spacing: 13),
+        GridItem(.flexible())
+    ]
+    
+    let regularColumns = [
+        GridItem(.flexible(), spacing: 13),
+        GridItem(.flexible(), spacing: 13),
+        GridItem(.flexible(), spacing: 13),
+        GridItem(.flexible(), spacing: 13),
+        GridItem(.flexible(), spacing: 13),
+        GridItem(.flexible())
+    ]
+    
     
     var body: some View {
-        let columns = horizontalSizeClass == .compact
-        ? [GridItem(.flexible(), spacing: 16), GridItem(.flexible())]
-        : [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16), GridItem(.flexible())]
+        let columns: [GridItem] = horizontalSizeClass == .compact ? compactColumns : regularColumns
         
-        ScrollView {
-            LazyVGrid( columns: columns,
-                       spacing: 20,
-                       content: {
-                ForEach(viewModel.getMoviesData(), id: \.self) { movie in
-                    ZStack {
-                        
-                        CustomMovieCard(
-                            imageUrl: "\(Constants.imageURL)\(movie.poster_path ?? "")",
-                            title: movie.title ?? "",
-                            releaseDate: movie.release_date ?? "",
-                            voteAverage: movie.vote_average ?? 0,
-                            voteCount: movie.vote_count ?? 0,
-                            genres: contentViewModel.mapGenreIdsToNames(genreIds: movie.genre_ids ?? [])
-                        )
-                        .buttonStyle(PlainButtonStyle())
-                        .listRowBackground(Color.clear)
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 6) {
+                    ForEach(viewModel.getMoviesData(), id: \.self) { movie in
+                        movieCardView(for: movie)
                     }
                 }
-            })
-            .padding(16)
-            .navigationTitle("Episodes")
+                .padding(16)
+                .navigationTitle("Movies")
+            }
+            .background(Color.customBackground)
         }
-        .background(Color.customBackground)
+    }
+    
+    
+    private func movieCardView(for movie: Movie) -> some View {
+        ZStack {
+            NavigationLink(
+                destination: MovieDetailedView(
+                    movie: movie,
+                    genres: viewModel.hasMovieDetail() ? viewModel.getFirstGenre() : "",
+                    runtime: viewModel.hasMovieDetail() ? viewModel.getRuntime(): 0, 
+                    isFavorite: viewModel.isFavourite(movie: movie, favouritesList: favouriteItems),
+                    didClickFavourite: {
+                        viewModel.saveToFavorites(context: context, movie: movie, favouritesList: favouriteItems)
+                    }
+                )
+                .onAppear {
+                    viewModel.detailedLoaded(id: movie.id ?? 1)
+                }
+            ) {
+                CustomMovieCard(
+                    imageUrl: "\(Constants.imageURL)\(movie.poster_path ?? "")",
+                    title: movie.title ?? ""
+                )
+                .buttonStyle(PlainButtonStyle())
+                .listRowBackground(Color.clear)
+            }
+        }
     }
 }

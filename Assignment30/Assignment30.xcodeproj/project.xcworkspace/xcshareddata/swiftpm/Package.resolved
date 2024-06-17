@@ -1,0 +1,15 @@
+{
+  "originHash" : "4fee4e8a6eee4267b636315860fa10d3ae0f168e29a0b9764897c5599ade6f5b",
+  "pins" : [
+    {
+      "identity" : "swiftpackage-network",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shkippppper/SwiftPackage-Network.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "783bbfc6e87c3e10b145d6df94b0abd6a2b1d0d1"
+      }
+    }
+  ],
+  "version" : 3
+}

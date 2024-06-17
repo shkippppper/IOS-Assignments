@@ -13,4 +13,12 @@ struct Constants {
     static let popularMoviesURL = "https://api.themoviedb.org/3/movie/popular"
     static let imageURL = "https://image.tmdb.org/t/p/w500"
     static let searchURL = "https://api.themoviedb.org/3/search/movie?include_adult=true&language=en-US"
+    static let detailedURL = "https://api.themoviedb.org/3/movie/"
+    static let discoverURL = "https://api.themoviedb.org/3/discover/movie?include_adult=true&language=en-US"
+}
+
+enum SearchTypes: String, CaseIterable {
+    case Name = "Name"
+    case Genre = "Genre"
+    case Year = "Year"
 }

@@ -32,10 +32,4 @@ final class ContentViewModel: ObservableObject {
             }
         }
     }
-    
-    func mapGenreIdsToNames(genreIds: [Int]) -> [String] {
-        return genreIds.compactMap { id in
-            movieGenres.first { $0.id == id }?.name
-        }
-    }
 }

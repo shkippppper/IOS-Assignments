@@ -10,25 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var contentViewModel = ContentViewModel()
     
-    init() {
-        let appearance = UITabBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(named: "customBackground")
-        
-        UITabBar.appearance().standardAppearance = appearance
-        UITabBar.appearance().scrollEdgeAppearance = appearance
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = UIColor(named: "customBackground")
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: "customSecondary") ?? .white]
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(named: "customSecondary") ?? .white]
-        
-        UINavigationBar.appearance().standardAppearance = navBarAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        UINavigationBar.appearance().compactAppearance = navBarAppearance
-    }
-    
     var body: some View {
         ZStack {
             Color.customBackground
@@ -37,19 +18,30 @@ struct ContentView: View {
                 MoviesListView(viewModel: MoviesListViewModel())
                     .background(Color.customBackground.ignoresSafeArea())
                     .tabItem {
-                        Label("Movies", systemImage: "film.stack")
+                        Image("iconTabbarHome1x")
+                            .renderingMode(.template)
+                        Text("Home")
                     }
-                    .environmentObject(contentViewModel)
                 
-                SearchView(viewModel: SearchViewModel())
+                SearchView(viewModel: SearchViewModel(contentViewModel: contentViewModel))
                     .background(Color.customBackground.ignoresSafeArea())
                     .tabItem {
-                        Label("Search", systemImage: "magnifyingglass")
+                        Image("iconTabbarSearch1x")
+                            .renderingMode(.template)
+                        Text("Search")
                     }
-                    .environmentObject(contentViewModel)
+
+                FavouritesListView(viewModel: FavouritesViewModel())
+                    .background(Color.customBackground.ignoresSafeArea())
+                    .tabItem {
+                        Image("iconFavourites1x")
+                            .renderingMode(.template)
+                        Text("Favourites")
+                    }
                 
             }
-            .accentColor(.customSecondary)
+            .environmentObject(contentViewModel)
+            
         }
     }
 }

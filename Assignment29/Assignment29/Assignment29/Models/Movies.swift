@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 struct Movies: Codable, Hashable {
     var page: Int?
@@ -16,16 +17,11 @@ struct Movies: Codable, Hashable {
 
 
 struct Movie: Codable, Hashable {
-    var adult: Bool?
-    var backdrop_path: String? //image for detailed
-    var genre_ids: [Int]?
+    var backdrop_path: String?
     var id: Int?
-    var original_language: String?
     var overview: String?
-    var popularity: Double?
-    var poster_path: String? //image for listing
+    var poster_path: String?
     var release_date: String?
     var title: String?
     var vote_average: Double?
-    var vote_count: Int?
 }
